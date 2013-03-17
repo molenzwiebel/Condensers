@@ -30,12 +30,8 @@ public class EMCConfig {
 			if (secondValue == null) {
 				String thirdKey = i.getTypeId()+"-X";
 				String thirdValue = emcConfig.getString(thirdKey);
-				System.out.println(i.getDurability());
-				System.out.println(this.getMaxDur(i));
-				System.out.println(Float.valueOf(thirdValue));
-				float value = (1 - (i.getDurability() / this.getMaxDur(i))) * Float.valueOf(thirdValue);
 				if (thirdValue != null)
-					return value;
+					return (1 - (i.getDurability() / this.getMaxDur(i))) * Float.parseFloat(thirdValue);
 				else
 					return 0;
 			}

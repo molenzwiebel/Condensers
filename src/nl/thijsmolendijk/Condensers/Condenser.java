@@ -64,6 +64,14 @@ public class Condenser {
 		if (this.maxEMC != 0) {
 			percentage = Tools.percentage(this.currentEMC, this.maxEMC);
 		}
+		if (this.maxEMC == 0) {
+			this.addGreyDye(72, 81);
+			return;
+		}
+		if (this.currentEMC > this.maxEMC) {
+			this.addGreenDye(72, 81);
+			return;
+		}
 		if (percentage < 11.1) {
 			this.addGreyDye(72, 81);
 			return;

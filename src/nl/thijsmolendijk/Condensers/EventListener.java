@@ -44,19 +44,15 @@ public class EventListener implements Listener {
 		if (i == null)
 			i = e.getCursor();
 		ItemMeta m = i.getItemMeta();
-		if (m == null) return;
-		if (this.plugin.conf.getEMC(i) == 0) {
-			if (i.getTypeId() != 36 || i.getType() != Material.TRIPWIRE) {
-				if (i.getType() != Material.INK_SACK && !i.getItemMeta().hasDisplayName())
-					m.setLore(Arrays.asList(ChatColor.GRAY + "Emc value: "+ChatColor.ITALIC+"not condensable"));
+		if (i != null || m != null || i.getTypeId() != 0) {
+			if (this.plugin.conf.getEMC(i) != 0) {
+				if (i.getTypeId() != 36 || i.getType() != Material.TRIPWIRE) {
+					if (i.getType() != Material.INK_SACK)
+						m.setLore(Arrays.asList(ChatColor.GRAY+"Emc value: "+this.plugin.conf.getEMC(i)));
+				}
 			}
-		} else {
-			if (i.getTypeId() != 36 || i.getType() != Material.TRIPWIRE) {
-				if (i.getType() != Material.INK_SACK && !i.getItemMeta().hasDisplayName())
-					m.setLore(Arrays.asList(ChatColor.GRAY+"Emc value: "+this.plugin.conf.getEMC(i)));
-			}
+			i.setItemMeta(m);
 		}
-		i.setItemMeta(m);
 		if (e.getRawSlot() > 80) return;
 		if (e.getRawSlot() == 63) {
 			return;
