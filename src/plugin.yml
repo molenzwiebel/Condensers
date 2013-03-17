@@ -1,0 +1,5 @@
+name: Condensers
+version: 0.2
+main: nl.thijsmolendijk.Condensers.Main
+author: molenzwiebel
+description: Use the equivalent exchange condensers in vanilla! This plugin allows you to make custom ender chests that function as condensers.

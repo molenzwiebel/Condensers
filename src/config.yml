@@ -1,0 +1,19 @@
+# Condenser interval,
+# 1 means a check every 2 ticks.
+# There are 20 ticks in a second.
+# So, 2 = check every 4 ticks = 5 checks every second
+condense-interval: 1
+
+
+# Show hovering item
+# Enables and Disables the hovering item if there
+# is something in the condenser
+show-hovering-item: true
+
+# Expensive recipe
+# If true, a diamond block is required like so:
+# O D O | O = Obsidian
+# D B D | D = Diamond
+# O D O | B = Diamond Block
+# If false, a chest is required.
+expensive-recipe: true
